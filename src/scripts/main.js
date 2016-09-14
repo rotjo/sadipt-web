@@ -4,12 +4,9 @@ SADIPT = {
 
   //inicializa la pagina
   init: function() {
+    this.setPresentationHeight();
     this.setColorBar();
     this.setToggleMenuButton();
-  },
-
-  refresh: function() {
-    this.setPresentationHeight();
   },
 
   //setea el alto del div principal de presentacion

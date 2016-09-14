@@ -1,0 +1,100 @@
+.header {
+  background-color: transparent;
+  display: flex;
+  height: 65px;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  transition: background .3s cubic-bezier(.4, .0, .2, 1);
+  width: 100%;
+  z-index: 100;
+
+  &--seamed {
+    background: $sadipt-black !important;
+  }
+
+  .rwd-menu-icon {
+    color: $light-font-color;
+    cursor: pointer;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 15px;
+    width: 48px;
+    will-change: opacity, pointer-events;
+
+    @media screen and (max-width: $break-medium) {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    i {
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__logo {
+    position: relative;
+
+    img {
+      height: 65px;
+      padding: 5px 0 5px 20px;
+    }
+  }
+
+  &__navigation {
+    height: 100%;
+    margin-right: 20px;
+    position: absolute;
+    width: 100%;
+  }
+
+  nav {
+    pointer-events: all;
+    position: absolute;
+    right: 15px;
+    will-change: height;
+
+    @media screen and (max-width: $break-medium) {
+      background-color: $sadipt-black;
+      height: 0;
+      overflow: hidden;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 65px;
+      transition: all .3s cubic-bezier(.4, .0, .2, 1);
+      width: 100%;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+
+      @media screen and (max-width: $break-medium) {
+        display: block;
+      }
+    }
+
+    li {
+      line-height: 33px;
+      margin: 0 15px;
+      white-space: nowrap;
+
+      @media screen and (max-width: $break-medium) {
+        margin: 16px 0;
+      }
+    }
+
+    a {
+      color: $light-font-color;
+      font-size: 18px;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+.main {
+  position: relative;
+
+  &.generic {
+    margin-top: 100px;
+  }
+
+  .title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 5px 0 8px;
+    overflow: hidden;
+    padding-right: 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+
+    &--small {
+      font-size: 1.2em;
+    }
+
+    @media screen and (max-width: $break-medium) {
+      font-size: 1.6em;
+
+      &--small {
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .subtitle {
+    color: $secondary-dark-font-color;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0;
+    overflow: hidden;
+    padding-right: 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+
+    &--small {
+      font-size: .8em;
+    }
+
+    @media screen and (max-width: $break-medium) {
+      font-size: .8em;
+
+      &--small {
+        font-size: .8em;
+      }
+    }
+  }
+
+  .resume {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    font-size: $default-font-size;
+    margin: 0 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+
+
+    &.rows-number-6 {
+      height: $default-font-size * $default-line-height * 5.9;
+      -webkit-line-clamp: 6;
+    }
+
+    &.rows-number-5 {
+      height: $default-font-size * $default-line-height * 4.9;
+      -webkit-line-clamp: 5;
+    }
+
+    &.rows-number-4 {
+      height: $default-font-size * $default-line-height * 3.9;
+      -webkit-line-clamp: 4;
+    }
+
+    &.rows-number-3 {
+      height: $default-font-size * $default-line-height * 2.9;
+      -webkit-line-clamp: 3;
+    }
+
+    &.rows-number-2 {
+      height: $default-font-size * $default-line-height * 1.9;
+      -webkit-line-clamp: 2;
+    }
+  }
+
+  .section-title {
+    margin: 0 auto 16px;
+    padding: 0 0 16px;
+    text-align: center;
+    width: 90%;
+  }
+
+  .bordered {
+    border: 5px solid $primary-dark-font-color;
+    display: inline-block;
+    padding: 15px;
+
+    span {
+      font-size: 3.2em;
+      font-weight: bold;
+      line-height: 1;
+
+      @media screen and (max-width: $break-medium) {
+        font-size: 2.8em;
+      }
+    }
+  }
+}
+

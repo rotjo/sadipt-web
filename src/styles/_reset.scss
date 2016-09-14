@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+  font-size: $default-font-size;
+  line-height: $default-line-height;
+}
+
+body {
+  color: $primary-dark-font-color;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}

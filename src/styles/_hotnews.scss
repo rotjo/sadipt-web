@@ -1,0 +1,68 @@
+.hot-news {
+  background-color: $sadipt-section-bck-color;
+  display: block;
+  margin: 0 auto;
+  overflow-x: hidden;
+  padding: 80px 0;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.card {
+  @include shadow-2dp();
+  background-color: $sadipt-white;
+  border: 1px solid $divider-dark-color;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  height: 350px;
+  margin: 20px 10px;
+  position: relative;
+  vertical-align: top;
+  white-space: normal;
+  width: 280px;
+
+  @media screen and (max-width: $break-medium) {
+    width: 230px;
+  }
+
+  &__image {
+    background-color: $image-placeholder-color;
+    height: 30%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  img {
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .4s cubic-bezier(.4, .0, .2, 1);
+    width: 100%;
+    will-change: opacity;
+
+    &.loaded {
+      opacity: 1;
+    }
+  }
+
+  &__body {
+    display: block;
+    height: 55%;
+    padding: 10px 16px 16px;
+    width: 100%;
+  }
+
+  &__actions {
+    border-top: 1px solid $divider-dark-color;
+    bottom: 0;
+    max-height: 60px;
+    overflow: hidden;
+    padding: 4px 0;
+    position: absolute;
+    width: 100%;
+  }
+}

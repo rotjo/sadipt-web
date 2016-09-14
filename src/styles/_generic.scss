@@ -1,0 +1,98 @@
+.members {
+  margin: 50px auto;
+  position: relative;
+}
+
+.members-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 10px auto;
+  width: 90%;
+}
+
+.member {
+  @include shadow-2dp();
+  background-color: $sadipt-white;
+  border: 1px solid $divider-dark-color;
+  border-radius: 3px;
+  display: inline-block;
+  height: 350px;
+  margin: 15px;
+  width: 250px;
+
+  &__image {
+    background-color: $image-placeholder-color;
+    height: 45%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  img {
+    height: 100%;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .4s cubic-bezier(.4, .0, .2, 1);
+    will-change: opacity;
+
+    &.loaded {
+      opacity: 1;
+    }
+  }
+
+  &__body {
+    display: block;
+    height: 65%;
+    padding: 10px 16px 16px;
+    width: 100%;
+  }
+}
+
+.tables {
+  background: $sadipt-secondary-section-bck-color;
+  height: auto;
+  margin: 50px auto;
+  padding: 50px 0;
+  position: relative;
+}
+
+.tables-container {
+  margin: 0 auto;
+  max-width: 750px;
+  width: 90%;
+}
+
+.elementos {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  margin: 50px auto;
+  position: relative;
+  width: 95%;
+
+  &__columnas:first-child {
+    border: 0;
+  }
+
+  &__columnas:last-child {
+    border: 0;
+  }
+
+  &__columnas {
+    border-left: 1px solid $divider-dark-color;
+    border-right: 1px solid $divider-dark-color;
+    flex: 1 33.333333%;
+    margin: 0 20px;
+  }
+}
+
+.misc {
+  display: flex;
+  flex-flow: row wrap;
+
+  &__item {
+    margin: 20px;
+  }
+}

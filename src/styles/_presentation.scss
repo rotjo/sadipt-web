@@ -1,0 +1,48 @@
+.presentation {
+  display: block;
+  position: relative;
+
+  &__main-message {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+
+    h1 {
+      color: $primary-light-font-color;
+      font-family: 'Candal', sans-serif;
+      font-size: 5em;
+      margin: 5px 0;
+
+      @media screen and (max-width: $break-medium) {
+        font-size: 3em;
+      }
+
+      @media screen and (max-width: $break-small) {
+        font-size: 2.4em;
+      }
+    }
+
+    h3 {
+      color: $primary-light-font-color;
+      font-size: 1.5em;
+      margin: 15px 0;
+
+      @media screen and (max-width: $break-small) {
+        font-size: .8em;
+      }
+    }
+
+    .actions {
+      margin-top: 50px;
+      will-change: display;
+
+      @media screen and (max-width: $break-small) {
+        display: none;
+      }
+    }
+  }
+}
+

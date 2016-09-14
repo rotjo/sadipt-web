@@ -1,0 +1,64 @@
+.paralax {
+  background-color: $sadipt-secondary-section-bck-color;
+  height: 100%;
+  min-height: 800px;
+  padding: 110px 0 0;
+  position: relative;
+
+  &::before {
+    background: $sadipt-section-bck-color;
+    content: '';
+    height: 250px;
+    position: absolute;
+    top: -200px;
+    transform: skewY(3deg);
+    width: 100%;
+    z-index: 0;
+  }
+
+  &::after {
+    background: $sadipt-section-bck-color;
+    bottom: -200px;
+    content: '';
+    height: 250px;
+    position: absolute;
+    transform: skewY(-3deg);
+    width: 100%;
+    z-index: 0;
+  }
+}
+
+.partners {
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    will-change: transform;
+
+    @media screen and (max-width: $break-medium) {
+      flex-wrap: wrap;
+    }
+
+    img {
+      height: 105px;
+      margin: 25px 15px;
+
+      @media screen and (max-width: $break-large) {
+        height: 85px;
+      }
+
+      @media screen and (max-width: $break-medium) {
+        height: 70px;
+      }
+    }
+  }
+}

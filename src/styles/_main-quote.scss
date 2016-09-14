@@ -1,0 +1,34 @@
+.main-quote {
+  margin: 10% auto 5%;
+  width: 80%;
+
+  @media screen and (max-width: $break-small) {
+    width: 90%;
+  }
+
+  .who-wrote {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+  }
+
+  .sign,
+  .charge {
+    font-size: 2em;
+    text-align: right;
+  }
+
+  .charge {
+    font-weight: bold;
+  }
+
+  .quote {
+    border-left: 9px solid $primary-color;
+    font-size: 2.7em;
+    font-style: italic;
+
+    @media screen and (max-width: $break-medium) {
+      font-size: 2em;
+    }
+  }
+}

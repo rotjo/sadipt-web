@@ -1,68 +1,7 @@
-var SADIPT = window.SADIPT || {};
-
-SADIPT = {
-
-  //inicializa la pagina
-  init: function() {
-    this.setPresentationHeight();
-    this.setColorBar();
-    this.setToggleMenuButton();
-  },
-
-  //setea el alto del div principal de presentacion
-  setPresentationHeight: function() {
-    var el = document.getElementsByClassName('presentation')[0];
-    if(el) {
-      var height = window.innerHeight;
-      el.style.height = height + 'px';
-    }
-  },
-
-  //colorea la toolbar segun la posicion del scroll
-  setColorBar: function() {
-    var header = document.getElementsByClassName('header')[0];
-    if(header) {
-      header.style.background = 'rgba(54, 60, 64, '+ document.body.scrollTop*0.007 +')';
-      document.addEventListener('scroll', function() {
-        header.style.background = 'rgba(54, 60, 64, '+ document.body.scrollTop*0.007 +')';
-      }, false);
-    }
-  },
-
-  //agrega la funcionalidad del menu responsive
-  setToggleMenuButton: function() {
-    
-    var header = document.querySelector('header');
-    var menuButton = document.getElementById('menuButton');
-    var menu = document.getElementById('menu');
-    var ulMenuMargin = parseInt(getComputedStyle(menu.children[0], null).getPropertyValue('margin').split(' ')[0].split('px')[0]);
-    
-    menuButton.addEventListener('click', function() {
-      
-      if(menuButton.children[0].innerHTML === 'menu') {
-        menuButton.children[0].innerHTML = 'clear';
-        menu.style.height = menu.children[0].offsetHeight + (ulMenuMargin * 2) + 'px';
-        menu.style.opacity = '1';
-        header.style.background = 'rgba(54, 60, 64, 1)';
-      }else {
-        menuButton.children[0].innerHTML = 'menu';
-        menu.removeAttribute('style');
-
-        if(document.body.scrollTop === 0) {
-          header.style.background = 'rgba(54, 60, 64, 0)';
-        }
-      }
-
-    }, false);
-
-  }
-
-};
-
-//carrusel de noticias
 var Carousel = (function() {
 
   //defino variables privadas
+  //A futuro pasar como parametro el nodo HTML de un carousel
   var cardsContainer   = document.getElementById('carouselItemsContainer');
   var moveLeft        = document.getElementById('carouselMoveLeft');
   var moveRight       = document.getElementById('carouselMoveRight');
@@ -257,62 +196,6 @@ var Carousel = (function() {
   return {
     init: init,
     refresh: _refresh
-  };
-
-})();
-
-var LazyLoad = (function() {
-
-  function init() {
-    _lazyLoadImages();
-    window.addEventListener('DOMContentLoaded', _lazyLoadImages);
-    window.addEventListener('resize', _lazyLoadImages);
-    window.addEventListener('scroll', _lazyLoadImages);
-    window.addEventListener('carouselmoving', _lazyLoadImages);
-  }
-
-  function _isElementInViewport (el) {
-
-    var rect = el.getBoundingClientRect();
-
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-
-  function _lazyLoadImages() {
-
-    var images = document.querySelectorAll('img[data-src]'),
-        item;
-
-    // carga las imagenes que fueron entrando al viewport
-    [].forEach.call(images, function (item) {
-      if (_isElementInViewport(item)) {
-        item.setAttribute('src',item.getAttribute('data-src'));
-        item.setAttribute('alt',item.getAttribute('data-alt'));
-        item.removeAttribute('data-src');
-        item.removeAttribute('data-alt');
-        item.addEventListener('load', function() {
-          item.setAttribute('class','loaded');
-        }, false);
-      }
-    });
-
-    // si todas las imagenes fueron cargadas remuevo los eventos
-    if (images.length === 0) {
-      window.removeEventListener('DOMContentLoaded', _lazyLoadImages);
-      window.removeEventListener('load', _lazyLoadImages);
-      window.removeEventListener('resize', _lazyLoadImages);
-      window.removeEventListener('scroll', _lazyLoadImages);
-      window.removeEventListener('carouselmoving', _lazyLoadImages);
-    }
-  }
-
-  return { 
-    init: init
   };
 
 })();

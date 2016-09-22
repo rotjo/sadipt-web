@@ -536,6 +536,7 @@ body {
 }
 
 .main .bordered span {
+  color: rgba(0, 0, 0, 0.87);
   font-size: 3.2em;
   font-weight: bold;
   line-height: 1;
@@ -645,6 +646,7 @@ body {
 }
 
 .card img {
+  height: 100%;
   left: 50%;
   opacity: 0;
   position: absolute;

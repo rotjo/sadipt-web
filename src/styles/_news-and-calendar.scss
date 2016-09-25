@@ -1,11 +1,35 @@
 .news-and-calendar {
-  background-color: $sadipt-section-bck-color;
+  background-color: $sadipt-secondary-section-bck-color;
   display: flex;
   flex-wrap: nowrap;
+  height: 100%;
   justify-content: center;
-  padding: 80px 0;
+  min-height: 800px;
+  padding: 110px 0;
   position: relative;
   width: 100%;
+
+  &::before {
+    background: $sadipt-section-bck-color;
+    content: '';
+    height: 250px;
+    position: absolute;
+    top: -200px;
+    transform: skewY(3deg);
+    width: 100%;
+    z-index: 0;
+  }
+
+  &::after {
+    background: $sadipt-section-bck-color;
+    bottom: -200px;
+    content: '';
+    height: 250px;
+    position: absolute;
+    transform: skewY(-3deg);
+    width: 100%;
+    z-index: 0;
+  }
 
   @media screen and (max-width: $break-medium) {
     flex-wrap: wrap;

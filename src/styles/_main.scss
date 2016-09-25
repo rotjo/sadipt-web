@@ -96,13 +96,11 @@
   }
 
   .bordered {
-    border: 5px solid $primary-dark-font-color;
-    display: inline-block;
-    padding: 15px;
+    padding: 15px 0;
 
     span {
       color: $primary-dark-font-color;
-      font-size: 3.2em;
+      font-size: 3.5em;
       font-weight: bold;
       line-height: 1;
 

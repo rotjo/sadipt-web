@@ -1,18 +1,12 @@
 .paralax {
   background-color: $sadipt-section-bck-color;
   height: 100%;
-  min-height: 500px;
+  padding: 0 0 100px;
   position: relative;
   width: 100%;
 }
 
 .partners {
-  left: 50%;
-  overflow: hidden;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 95%;
 
   ul {
     display: flex;

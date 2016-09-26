@@ -5,7 +5,7 @@
   height: 100%;
   justify-content: center;
   min-height: 800px;
-  padding: 110px 0;
+  padding: 200px 0;
   position: relative;
   width: 100%;
 
@@ -26,7 +26,7 @@
     content: '';
     height: 250px;
     position: absolute;
-    transform: skewY(-3deg);
+    transform: skewY(3deg);
     width: 100%;
     z-index: 0;
   }
